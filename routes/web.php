@@ -20,3 +20,6 @@ Route::get('/', function () {
 });
 Route::get('/actividades', [ActividadController::class, 'index'])->name('index.actividades');
 Route::get('/actividades/resumen', [ActividadController::class, 'resumen'])->name('resumen.actividades');
+
+Route::get('/registro', 'RegistroController@index')->name('registro.index');
+Route::post('/registro', 'RegistroController@submit')->name('registro.submit');
