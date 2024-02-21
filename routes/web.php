@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ActividadController;
-
-
+use App\Http\Controllers\EmotionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +13,16 @@ use App\Http\Controllers\ActividadController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/actividades', [ActividadController::class, 'index'])->name('index.actividades');
-Route::get('/actividades/resumen', [ActividadController::class, 'resumen'])->name('resumen.actividades');
+
+
+Route::get('/', [EmotionController::class, 'index'])->name('home');
+Route::post('/register', [EmotionController::class, 'register'])->name('register');
+Route::post('/login', [EmotionController::class, 'login'])->name('login');
+Route::get('/activity', [EmotionController::class, 'activity'])->name('activity');
+Route::post('/save-activity', [EmotionController::class, 'saveActivity'])->name('save.activity');
+Route::get('/summary', [EmotionController::class, 'summary'])->name('activity.summary');
+Route::get('/search', [EmotionController::class, 'search'])->name('activity.search');
+Route::get('/registration-success', function () {
+    return view('registration_success');
+})->name('registration.success');
+
