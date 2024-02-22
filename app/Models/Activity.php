@@ -1,11 +1,10 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Activity extends Model
 {
-    protected $fillable = ['alias', 'codigo'];
+    protected $fillable = ['name'];
 }

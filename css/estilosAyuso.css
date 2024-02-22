@@ -1,0 +1,194 @@
+h4{
+    text-align: center;
+}
+
+
+
+#logo{
+    display: block;
+    width: 10%;
+    margin: auto;
+}
+
+.checkeable img {
+    border: 2px solid transparent;
+}
+
+.checkeable input {
+    display: none;
+}
+
+.checkeable input:checked  + img {
+    border-color: rgb(0, 0, 0);
+}
+
+.checkeable input {
+    display: none;
+}
+
+
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    text-align: center;
+}
+
+body{
+    background-color: rgb(29, 0, 250);
+    background-image: radial-gradient(#00ffd9, #0091ff);
+}
+
+.cajaTextError {
+	color: #ff0019dd;
+}
+
+.txtMensaje {
+    margin: 0;
+}
+.mensaje{
+    position: relative;
+}
+
+h5{
+    text-align: center;
+} 
+
+input{
+    text-align: center;
+    
+}
+
+#botones{
+    align-items: center;
+}
+
+.btnSig1{
+    align-items: center;
+}
+
+.btnSig3{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    padding: 10px 15px;
+    
+}
+
+.btnSig3:hover{
+    background-color: rgb(71, 69, 69);
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btnSig1:hover{
+    background-color: rgb(71, 69, 69);
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btnSig2:hover{
+    background-color: rgb(71, 69, 69);
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#usuario{
+    align-items: center;
+}
+
+#datosIntroducidos{
+    align-items: center;
+    text-align: center;
+}
+
+#imgTic{
+	width: 50px;
+}
+
+.msj{
+	display: flex;
+	align-items: center;
+}
+
+.boton{
+    align-items: center;
+}
+
+
+#imagen{
+    width: 50px;
+    text-align: center;
+}
+
+.tic {
+    display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
+.enlace{
+    background-color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    max-width: 120px;
+    color: black; 
+    font-family: arial; 
+    
+}
+.enlace:hover{
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.enlace{
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#cabecera{
+    /* display: flex; */
+	align-items: center;
+    justify-content: center;
+}
+
+
+#estado{
+    align-items: center;
+    justify-content: center;
+}
+select{
+    height:50px;
+    width:170px;
+    text-align: center;
+}
+
+
+/* estilos imagenes seleccionables */
+
+
+
+
+
+
+
+
+textarea{
+    align-items: center;
+}
+/* 
+.estado{
+    display: flex; 
+	align-items: center;
+    justify-content: center;
+}  */
