@@ -1,3 +1,4 @@
+
 function comprobarNombre(){
     var ok;
     var nombre=document.getElementById("nombre").value;
@@ -55,8 +56,58 @@ function comprobarNombre(){
     return ok;
 }
 
+function guardarEstado(numero){
+    var input=document.getElementById("estado")
 
-function comprobarcontraseña(){
+    switch(numero){
+        case 1:
+            input.value = "&#128539"
+            document.getElementById("btn1").className="form-style-btnClicked"
+            document.getElementById("btn2").className="form-style-btn"
+            document.getElementById("btn3").className="form-style-btn"
+            document.getElementById("btn4").className="form-style-btn"
+            document.getElementById("btn5").className="form-style-btn"
+        break;
+
+        case 2:
+            input.value = "&#128529"
+            document.getElementById("btn1").className="form-style-btn"
+            document.getElementById("btn2").className="form-style-btnClicked"
+            document.getElementById("btn3").className="form-style-btn"
+            document.getElementById("btn4").className="form-style-btn"
+            document.getElementById("btn5").className="form-style-btn"
+        break;
+
+        case 3:
+            input.value = "&#128532"
+            document.getElementById("btn1").className="form-style-btn"
+            document.getElementById("btn2").className="form-style-btn"
+            document.getElementById("btn3").className="form-style-btnClicked"
+            document.getElementById("btn4").className="form-style-btn"
+            document.getElementById("btn5").className="form-style-btn"
+        break;
+
+        case 4:
+            input.value = "&#128548"
+            document.getElementById("btn1").className="form-style-btn"
+            document.getElementById("btn2").className="form-style-btn"
+            document.getElementById("btn3").className="form-style-btn"
+            document.getElementById("btn4").className="form-style-btnClicked"
+            document.getElementById("btn5").className="form-style-btn"
+        break;
+
+        case 5:
+            input.value = "&#128557"
+            document.getElementById("btn1").className="form-style-btn"
+            document.getElementById("btn2").className="form-style-btn"
+            document.getElementById("btn3").className="form-style-btn"
+            document.getElementById("btn4").className="form-style-btn"
+            document.getElementById("btn5").className="form-style-btnClicked"
+        break;
+    }
+}
+
+function comprobarContraseña(){
     var ok;
     var contraseña=document.getElementById("contraseña").value;
     var padre=document.getElementById("contraseña").parentNode;//recoge el elemento padre
@@ -98,7 +149,7 @@ function comprobarcontraseña(){
         }
         else{
             document.getElementById("contraseña").classList.remove("is-invalid");
-            document.getElementById("contraseña").classList.remove("cajaTextError"); 
+            document.getElementById("contraseña").classList.remove("cajaTextError");
             document.getElementById("contraseña").classList.add("is-valid");          
         }
     }
@@ -112,50 +163,27 @@ function comprobarcontraseña(){
     }
     return ok;
 }
-
-
-// function mostrarModal(){//esto es solo para mostrar la tabla
-//     var modal = new bootstrap.Modal(document.getElementById('modal'));
-
-//     formarTabla();
-
-//     modal.show();
-// }
-
-function cambia(paso){//esto es para mostrar por partes el formulario
-    //recojo el contenedor donde irán los datos
-    var padre=document.getElementById("datos");
-    var hijos = padre.children;
-    hijos[paso].classList.add("d-none");//le añado la clase que esconde la pate validada
-    hijos[paso+1].classList.remove("d-none");//le quito lrl d-none para mostrar la siguiente parte del formulario
-}
-
-
 function validarCampos1(){
-    var contraseña=comprobarcontraseña();
-    var nombre=comprobarNombre();
-   
+    var contraseña = comprobarContraseña();
+    var nombre = comprobarNombre();
 
-    if(contraseña && nombre){
-        // cambia(0);
-        window.location.href = 'todoCorrecto2.html'
-    }
-}
-
-function validarCampos2(){
-    var contraseña=comprobarcontraseña();
-    var nombre=comprobarNombre();
-   
-
-    if(contraseña && nombre){
-        // cambia(0);
-        window.location.href = 'añadirEstado.html'
+    if (contraseña && nombre) {
+        window.location.href = 'todoCorrecto2.html'; // Corregir URL
     }
 }
 
 
-function validarCampos3(){
-    window.location.href = 'estadoEnviado.html'
+function validarCampos2() {
+    var contraseña = comprobarContraseña();
+    var nombre = comprobarNombre();
+
+    if (contraseña && nombre) {
+        window.location.href = 'añadirEstado.html'; // Corregir URL
+    }
+}
+
+function validarCampos3() {
+    window.location.href = 'estadoEnviado.html';
 }
 // function comprobarCampos1(){
 //     var cN=comprobarNombre()

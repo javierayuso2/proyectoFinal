@@ -17,22 +17,25 @@ class EmotionController extends Controller
 
     public function register(Request $request)
     {
+        // Validación de datos
         $request->validate([
             'alias' => 'required|string|max:255',
             'codigo' => 'required|string|max:255|unique:users',
         ]);
-
+    
+        // Crear el usuario
         $user = User::create([
             'alias' => $request->alias,
             'codigo' => $request->codigo,
         ]);
-
-        return redirect()->route('home')->with('success', 'Registro exitoso.');
+    
+        // Redirigir a la vista de éxito de registro
+        return redirect()->route('registration_success');
     }
 
     public function login(Request $request)
     {
-        // Aquí puedes implementar la lógica de inicio de sesión si es necesario
+        // Implementa la lógica de inicio de sesión si es necesario
         return redirect()->route('activity');
     }
 
@@ -43,41 +46,46 @@ class EmotionController extends Controller
         return view('activity', compact('activities', 'emotions'));
     }
 
-    public function saveActivity(Request $request)
+    public function store(Request $request)
     {
+        // Validación de datos
         $request->validate([
-            'activity_id' => 'required|exists:activities,id',
-            'emotion_state_id' => 'required|exists:emotion_states,id',
+            'activity_id' => 'required',
+            'emotion_state_id' => 'required|array',
+            'info' => 'nullable|string',
         ]);
 
-        // Suponiendo que tienes autenticación de usuario y tienes acceso al usuario actual
-        $user = auth()->user();
+          // Crear una nueva instancia de Activity y guardar en la base de datos
+                $activity = new Activity();
+                $activity->activity_id = $request->activity_id;
+                $activity->emotion_state_id = implode(',', $request->emotion_state_id);
+                $activity->info = $request->info;
+                $activity->save();
 
-        // Guardar la actividad
-        $activityRegistration = new ActivityRegistration();
-        $activityRegistration->user_id = $user->id;
-        $activityRegistration->activity_id = $request->activity_id;
-        $activityRegistration->emotion_state_id = $request->emotion_state_id;
-        $activityRegistration->date = now(); // Opcional: Puedes personalizar la fecha aquí si es necesario
-        $activityRegistration->save();
+    // Redirigir a la vista de éxito de actividad
+                return redirect()->route('activity_success');
+}
 
-        return redirect()->back()->with('success', 'Actividad guardada exitosamente.');
-    }
 
     public function summary()
     {
-        return view('summary');
+        return redirect()->route('search_results');
     }
+    
+    
+    public function success()
+{
+    return view('activity_success');
+}
 
-    public function search(Request $request)
+    public function searchResults()
     {
-        $request->validate([
-            'date' => 'required|date',
-        ]);
-
-        $date = $request->input('date');
+        $date = date('Y-m-d'); 
         $activities = ActivityRegistration::whereDate('date', $date)->get();
 
         return view('search_results', compact('activities', 'date'));
     }
+
 }
+
+

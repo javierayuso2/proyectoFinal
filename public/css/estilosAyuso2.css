@@ -7,6 +7,18 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
+section .signin .content .form .enlace
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+}
+
+
 
 body 
 {
@@ -16,9 +28,6 @@ body
 	min-height: 100vh;
 	background: #ffffff;
 }
-
-
-
 section 
 {
 	position: absolute;
@@ -67,10 +76,21 @@ section span:hover
 	transition: 0s;
 }
 
+#imgTic{
+	width: 75px;
+}
+
+.tic {
+    display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
 section .signin
 {
 	position: absolute;
-	width: 450px;
+	width: 900px;
+	height: 200px;
   	background: rgb(255, 255, 255);  
 	z-index: 1000;
 	display: flex;
@@ -104,15 +124,25 @@ section .signin .content .form .actividad
 
 section .signin .content .form .estado
 {
-font-size: 27px;
+	font-size: 27px;
 }
 
+section .signin .content .form .mensaje .mensaje2
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+}
 
 
 
 section .signin .content h2 
 {
-	font-size: 35px;
+	font-size: 30px;
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
 }
@@ -193,40 +223,6 @@ section .signin .content .form .botones input:hover
 	
 }
 
-
-/* section .signin .content .form .botones input */
-
-.form-style-btn
-{
-	width: 60px;
-    height: 60px;
-    margin: 5px;
-    padding: 10px;
-	background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    font-size: 25px; /* Ajusta este valor según tu preferencia */
-    line-height: 32px;
-    text-transform: uppercase;
-	
-}
-
-/* section .signin .content .form .botones input . */
-
-.form-style-btnClicked
-{
-	width: 60px;
-    height: 60px;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 50px;
-    font-size: 25px; /* Ajusta este valor según tu preferencia */
-    line-height: 32px;
-	background-color: #181818;
-    text-transform: uppercase;
-	border: 2px solid gold;
-	
-}
-
 section .signin .content .form .inputBox input 
 {
 	position: relative;
@@ -240,13 +236,6 @@ section .signin .content .form .inputBox input
 	font-weight: 500;
 	font-size: 1em;
 }
-
-
-.cajaTextError {
-	color: #ff0019dd;
-	font-weight: 2px;
-}
-
 section .signin .content .form .inputBox i 
 {
 	position: absolute;
