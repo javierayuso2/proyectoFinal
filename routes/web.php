@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmotionController;
 
@@ -12,14 +11,14 @@ Route::get('/registration-success', function () {
 
 Route::post('/login', [EmotionController::class, 'login'])->name('login');
 Route::get('/activity', [EmotionController::class, 'activity'])->name('activity');
-Route::post('/guardar-actividad', [EmotionController::class, 'store'])->name('save.activity');
-Route::get('/activity-success', 'EmotionController@success')->name('activity_success');
+
+Route::post('/save-activity', [EmotionController::class, 'saveActivity'])->name('save.activity'); // Corregido el nombre del controlador y método
+Route::get('/search-results', [EmotionController::class, 'searchResults'])->name('search.results');
 Route::get('/activity-success', function () {
     return view('activity_success');
 })->name('activity_success');
 
-Route::get('/search_results', 'EmotionController@searchResults')->name('search_results');
 
-Route::get('/activity/summary', [EmotionController::class, 'activitySummary'])->name('activity.summary');
+Route::get('/activity/summary', [EmotionController::class, 'summary'])->name('activity.summary');
 Route::post('/activity/summary', [EmotionController::class, 'showSummary'])->name('activity.summary.show');
 

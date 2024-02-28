@@ -17,20 +17,17 @@ class EmotionController extends Controller
 
     public function register(Request $request)
     {
-        // Validación de datos
         $request->validate([
             'alias' => 'required|string|max:255',
             'codigo' => 'required|string|max:255|unique:users',
         ]);
-    
-        // Crear el usuario
+
         $user = User::create([
             'alias' => $request->alias,
             'codigo' => $request->codigo,
         ]);
-    
-        // Redirigir a la vista de éxito de registro
-        return redirect()->route('registration_success');
+
+        return redirect()->route('home')->with('success', 'Registro exitoso.');
     }
 
     public function login(Request $request)
@@ -46,46 +43,42 @@ class EmotionController extends Controller
         return view('activity', compact('activities', 'emotions'));
     }
 
-    public function store(Request $request)
-    {
-        // Validación de datos
-        $request->validate([
-            'activity_id' => 'required',
-            'emotion_state_id' => 'required|array',
-            'info' => 'nullable|string',
-        ]);
+// Controlador
 
-          // Crear una nueva instancia de Activity y guardar en la base de datos
-                $activity = new Activity();
-                $activity->activity_id = $request->activity_id;
-                $activity->emotion_state_id = implode(',', $request->emotion_state_id);
-                $activity->info = $request->info;
-                $activity->save();
+public function saveActivity(Request $request)
+{
+    // Validar los datos recibidos
+    $request->validate([
+        'activity_id' => 'required|string',
+        'info' => 'nullable|string',
+    ]);
 
-    // Redirigir a la vista de éxito de actividad
-                return redirect()->route('activity_success');
+    // Crear una nueva instancia de Activity
+    $activity = new Activity([
+        'activity_id' => $request->activity_id,
+        'emotion_state_id' => 0, // Establecer un valor predeterminado, por ejemplo, 0
+        'info' => $request->info,
+    ]);
+    $activity->save();
+
+    
+    // Redireccionar a la vista 'activity' con los datos necesarios
+    return redirect()->route('activity');
 }
 
+    
+    
 
     public function summary()
     {
-        return redirect()->route('search_results');
+        return view('summary');
     }
-    
-    
-    public function success()
-{
-    return view('activity_success');
-}
 
     public function searchResults()
     {
-        $date = date('Y-m-d'); 
-        $activities = ActivityRegistration::whereDate('date', $date)->get();
-
-        return view('search_results', compact('activities', 'date'));
+        $activities = Activity::all(); // Obtener todos los registros de la tabla activities
+        return view('search_results', compact('activities'));
     }
-
+    
+    
 }
-
-

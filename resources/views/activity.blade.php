@@ -303,25 +303,50 @@
                 <option value="Salir de fiesta">estudiar</option>
               </select>
             </div>
-            <h5 class="estado">Elija un estado de ánimo</h5>
-            <div class="botones">
-              <input type="hidden" name="estado" id="estado">
-
-              <input type="button" name="emotion_state_id[]" value="&#128539" class="form-style-btn" id="btn1" onclick="guardarEstado(1)">
-              <input type="button" name="emotion_state_id[]" value="&#128529" class="form-style-btn" id="btn2" onclick="guardarEstado(2)">
-              <input type="button" name="emotion_state_id[]" value="&#128532" class="form-style-btn" id="btn3" onclick="guardarEstado(3)">
-              <input type="button" name="emotion_state_id[]" value="&#128548" class="form-style-btn" id="btn4" onclick="guardarEstado(4)">
-              <input type="button" name="emotion_state_id[]" value="&#128557" class="form-style-btn" id="btn5" onclick="guardarEstado(5)">
+           <div class="row" style="text-align: center;">
+            <div class="col-12 col-md-12">
+                <h5> Elija un estado de ánimo</h5><br>
+                <div class="botones">
+            
+                  <label class="checkeable">
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128539" />
+                      <img src="imagenes/riendo.png" style="width: 30px; height: auto;" />
+                  </label>
+                  <label class="checkeable">
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128529" />
+                      <img src="imagenes/normal.png" style="width: 30px; height: auto;" />
+                  </label>
+                  <label class="checkeable">
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128532" />
+                      <img src="imagenes/triste.png" style="width: 30px; height: auto;" />
+                  </label>
+                  <label class="checkeable">
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128548" />
+                      <img src="imagenes/llorando.png" style="width: 30px; height: auto;" />
+                  </label>
+                  <label class="checkeable">
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128557" />
+                      <img src="imagenes/enfadado.png" style="width: 30px; height: auto;" />
+                  </label>
+                </div>
             </div>
+        </div>
+
 
             <div>
             <textarea class="txtArea form-control" name="info" placeholder="Escribe una descripcion de tu estado emocional"></textarea>
             </div>
           <div class="inputBox">
-            <input type="submit" value="Enviar" onclick="validarCampos3()">
+          <input type="submit" value="Enviar">
         </div>
+
+
     </form>
-          
+        <div class="inputBox">
+              <form action="{{ route('search.results') }}" method="GET">
+              <input type="submit" value="Ver Resumen">
+              </form>
+        </div>
         </div>
       </div>
     </div>

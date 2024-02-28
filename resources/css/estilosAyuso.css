@@ -10,21 +10,34 @@ h4{
     margin: auto;
 }
 
+.checkbox-img {
+    width: 10px; /* ajusta el tamaño según sea necesario */
+    height:10px; /* mantiene la proporción de aspecto */
+}
+
+.checkbox{
+    border: 2px solid transparent;
+    width: 10px; /* ajusta el tamaño según sea necesario */
+    height: 10px; /* mantiene la proporción de aspecto */
+}
 .checkeable img {
     border: 2px solid transparent;
+    width: 10px; /* ajusta el tamaño según sea necesario */
+    height: 10px; /* mantiene la proporción de aspecto */
 }
 
 .checkeable input {
     display: none;
 }
 
-.checkeable input:checked  + img {
+.checkeable input:checked + img {
     border-color: rgb(0, 0, 0);
 }
 
 .checkeable input {
     display: none;
 }
+
 
 
 *{

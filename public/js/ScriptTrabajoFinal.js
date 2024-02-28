@@ -183,7 +183,7 @@ function validarCampos2() {
 }
 
 function validarCampos3() {
-    window.location.href = 'estadoEnviado.html';
+    document.querySelector('form').submit();
 }
 // function comprobarCampos1(){
 //     var cN=comprobarNombre()

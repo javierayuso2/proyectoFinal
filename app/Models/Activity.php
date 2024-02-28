@@ -13,5 +13,10 @@ class Activity extends Model
 
     protected $fillable = ['activity_id', 'emotion_state_id', 'info']; // Campos que se pueden asignar de manera masiva
 
+    public function emotionStates()
+{
+    return $this->belongsToMany(EmotionState::class);
+}
+
     // Aquí podrías definir relaciones con otros modelos si es necesario
 }
