@@ -44,7 +44,6 @@ class EmotionController extends Controller
     }
 
 // Controlador
-
 public function saveActivity(Request $request)
 {
     // Validar los datos recibidos
@@ -53,18 +52,21 @@ public function saveActivity(Request $request)
         'info' => 'nullable|string',
     ]);
 
+    // Obtener los valores de los checkbox como una cadena
+    $emotion_state_ids = implode(',', $request->input('emotion_state_id'));
+
     // Crear una nueva instancia de Activity
     $activity = new Activity([
         'activity_id' => $request->activity_id,
-        'emotion_state_id' => 0, // Establecer un valor predeterminado, por ejemplo, 0
+        'emotion_state_id' => $emotion_state_ids, // Guardar los valores de los checkbox
         'info' => $request->info,
     ]);
     $activity->save();
 
-    
     // Redireccionar a la vista 'activity' con los datos necesarios
     return redirect()->route('activity');
 }
+
 
     
     

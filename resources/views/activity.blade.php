@@ -294,13 +294,13 @@
             <h5 class="actividad">Elija una actividad</h5>
             <div class="select">
               <select name="activity_id" id="actividad">
-                <option value="Desayunar">comer</option>
-                <option value="Comer">cenar</option>
-                <option value="Cenar">dormir</option>
-                <option value="Entrenar">hacer deporte</option>
-                <option value="Dormir">salir de fiesta</option>
-                <option value="Estudiar">trabajar</option>
-                <option value="Salir de fiesta">estudiar</option>
+                <option value="Desayunar">Desayunar</option>
+                <option value="Cenar">Cenar</option>
+                <option value="Dormir">Dormir</option>
+                <option value="Hacer deporte">Hacer deporte</option>
+                <option value="Salir de fiesta">Salir de fiesta</option>
+                <option value="Trabajar">Trabajar</option>
+                <option value="Estudiar">Estudiar</option>
               </select>
             </div>
            <div class="row" style="text-align: center;">
@@ -309,23 +309,23 @@
                 <div class="botones">
             
                   <label class="checkeable">
-                      <input type="checkbox" name="emotion_state_id[]" value="&#128539" />
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128514" />
                       <img src="imagenes/riendo.png" style="width: 30px; height: auto;" />
                   </label>
                   <label class="checkeable">
-                      <input type="checkbox" name="emotion_state_id[]" value="&#128529" />
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128513" />
                       <img src="imagenes/normal.png" style="width: 30px; height: auto;" />
                   </label>
                   <label class="checkeable">
-                      <input type="checkbox" name="emotion_state_id[]" value="&#128532" />
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128542" />
                       <img src="imagenes/triste.png" style="width: 30px; height: auto;" />
                   </label>
                   <label class="checkeable">
-                      <input type="checkbox" name="emotion_state_id[]" value="&#128548" />
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128557" />
                       <img src="imagenes/llorando.png" style="width: 30px; height: auto;" />
                   </label>
                   <label class="checkeable">
-                      <input type="checkbox" name="emotion_state_id[]" value="&#128557" />
+                      <input type="checkbox" name="emotion_state_id[]" value="&#128545" />
                       <img src="imagenes/enfadado.png" style="width: 30px; height: auto;" />
                   </label>
                 </div>
